@@ -1,0 +1,73 @@
+The color codes in mIRC are inserted by hitting the ctrl-K key
+combination. The actual control character inserted in the text 
+is a ctrl-C seen as ^C or inverse C on most UNIX clients.
+
+Besides mIRC also IRCLE (Mac) uses the ^C color attribute stuff,
+Virc and Pirch do or might do soon, and even some UNIX scripts 
+start to use it. The syntax of the color attribute in text has the 
+format  ^CN[,M]  to start colored text. A plain ^C can be used to 
+close the effect, much like the normal Bold/Inverse/Underline
+attributes.
+
+N and M can be any number out of a range {0,1,..,15} thus pointing 
+to a range of sixteen colors. N will be the text (foreground) color, 
+M a background color. A background color (M) is not always included.
+If no background color is set the recieving client uses his default 
+background color (white).
+
+! Technically mIRC accepts the full number range 0,1,2,... 99 (and
+  even 00,01,02,03,...99) as valid color numbers. Thus N and M can 
+  maximally be two digits long. Color 16 is the same as color 0,
+  color 17 is the same as color 1, etc. etc. 
+
+You can expect to see combinations like:
+ blabla ^C5,12to be colored text and background^C blabla
+ blabla ^C5to be colored text^C blabla
+ blabla ^C3to be colored text ^C5,2other colored text and also background^C blabla
+ blabla ^C3,5to be colored text and background ^C8other colored text but SAME background^C blabla
+ blabla ^C3,5to be colored text and background ^C8,7other colored text and other background^C blabla
+
+As you see the background color keeps valid till it is changed or till 
+the entire color is switched off with a ^C. Of course lines can start 
+with colored text from the beginning and a closing ^C is not always given.
+To specify a background color ALSO a foreground color has to be given.
+(So a ^C,8 attribute is NOT valid and thus ignored)
+
+! Note that if you want to give color to NUMBERS this syntax could mess up
+  if used improperly :-)  Still this syntax is chosen for the sake of 
+  symplicity. If you use color numbers 01,02,03,...09 instead of 1,2,3,...9 
+  all possible problems with giving color to numbers are prevented! This 
+  just takes a little dicipline from the users. Thus use ^C0,01123^C to 
+  display the text 123 in white on a black background and not ^C0,1123^C 
+  which would result in the text 23 in white on lightcyan.
+
+Color code list
+ 0 white
+ 1 black
+ 2 blue (dark)
+ 3 green (dark)
+ 4 red
+ 5 brown
+ 6 purple (dark)
+ 7 orange
+ 8 yellow
+ 9 lightgreen
+ 10 cyan (a kinda green/blue) (teal ?)
+ 11 lightcyan (cyan ?)
+ 12 lightblue
+ 13 pink (light purple)
+ 14 grey
+ 15 lightgrey
+
+This list matches best to already existing 'standards' on Mac and 
+other Windows' clients.
+
+I hope this information is of use to you?  If you need any more 
+info, please ask me? :-))  I'm always willing to dig up more info 
+for you :-)
+
+Tjerk Vonck.
+t.r.vonck@student.utwente.nl
+
+--
+December 10, 1996

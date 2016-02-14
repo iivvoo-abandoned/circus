@@ -1,0 +1,9 @@
+Some strings are not valid when passing to the interpreter
+
+- title
+- name
+
+not
+
+- vars, commands, paths
+

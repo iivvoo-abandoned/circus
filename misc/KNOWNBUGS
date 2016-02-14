@@ -1,0 +1,4 @@
+- /me doesn't work (properly) in the messagewindow (it does work in query-
+  windows!)
+- /clear doesn't work in the master or messagewindow, it should in all others
+

@@ -1,0 +1,146 @@
+proc ConfigureInterface {} {
+
+set gen_bg              gray
+set gen_fg              black
+
+set gen_darker_bg       gray66
+set gen_darker_fg       black
+
+set gen_active_bg       gray66
+set gen_active_fg       $gen_fg
+
+set gen_font            -*-helvetica-medium-r-normal-*-14-*-*-*-*-*-*-*
+set gen_bold_font       -*-helvetica-bold-r-normal-*-14-*-*-*-*-*-*-*
+set gen_menu_font       -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-*-*
+set gen_italic_font     -*-helvetica-bold-o-normal-*-14-*-*-*-*-*-*-*
+
+
+# general stuff, everything gets these defaults unless otherwise specified
+#-------------------------------------------------------------------------
+option add *font                        $gen_font
+option add *background            	$gen_bg
+option add *foreground            	$gen_fg
+option add *activeBackground      	$gen_active_bg
+option add *activeForeground      	$gen_active_fg
+option add *disabledForeground      	gray45
+option add *anchor			w
+option add *highlightThickness		0
+
+# buttons
+#--------
+option add  *Button.borderWidth    	2
+option add  *Button.anchor		c
+
+# check buttons
+#--------------
+option add *Checkbutton.selector	red
+option add *Checkbutton.borderWidth    	2
+option add *Checkbutton.relief    	flat
+
+# radio buttons
+#--------------
+option add *Radiobutton.selector	yellow
+option add *Radiobutton.borderWidth    	2
+option add *Radiobutton.relief		flat
+
+# entries
+#--------
+option add *Entry.relief              sunken
+option add *Entry.background          $gen_darker_bg
+option add *Entry.foreground          black
+option add *Entry.insertBackground    black
+option add *Entry.font                -*-courier-medium-r-*-*-14-*-*-*-*-*-*-*
+
+# labels
+#-------
+option add *Label.anchor		w
+option add *Label.borderWidth		0
+
+# labelframe 
+#-----------
+option add *Labelframe.borderWidth	2
+
+# listboxs
+#---------
+option add *Listbox.background          $gen_darker_bg
+
+# menus
+#------
+option add *Menu*font                   $gen_menu_font
+
+# menus buttons
+#--------------
+option add *Menubutton*font             $gen_menu_font
+
+# scales
+#-------
+option add *Scale.foreground            $gen_fg
+option add *Scale.activeForeground      $gen_active_bg
+option add *Scale.background            $gen_bg
+option add *Scale.sliderForeground      $gen_bg
+option add *Scale.sliderBackground      $gen_darker_bg
+option add *Scale.font                  $gen_italic_font
+
+# scrollbars
+option add *Scrollbar.foreground        $gen_bg
+option add *Scrollbar.activeForeground  $gen_active_bg
+option add *Scrollbar.background        $gen_darker_bg
+option add *Scrollbar.relief            sunken
+
+# Set some fonts. 6x13 is nice, small and readable
+
+option add *Label.font			6x13
+option add *Checkbutton.font		6x13
+option add *Text.font			6x13
+option add *Entry.font			6x13
+option add *Menu.font			6x13
+
+. configure -bg $gen_bg
+}
+
+ConfigureInterface
+
+#
+# We need these extra bindings 
+
+bind Button <3> {
+    tkButtonDown %W
+}
+bind Button <ButtonRelease-3> {
+    tkButtonUp %W
+} 
+
+#
+# Some systems have problems with backspace/delete keys.. *sigh*
+
+proc fixdeletekey {} {
+   bind Entry <Delete> {
+      if [%W selection present] {
+         %W delete sel.first sel.last
+      } else {
+         tkEntryBackspace %W
+      }
+   }
+   bind Text <Delete> {
+      if {[%W tag nextrange sel 1.0 end] != ""} {
+         %W delete sel.first sel.last
+      } elseif [%W compare insert != 1.0] {
+         %W delete insert-1c
+         %W see insert
+      }
+   }      
+}
+
+fixdeletekey
+
+set nick	cIRCuser
+set ircname	{official cIRCus alpha-tester}
+set ircserver	irc.sci.kun.nl
+set ircport	6669
+set notifyinterval	30
+#set notify 		{ VladDrac Liesje Tijgertje Opperserv Nederserv }
+set notify 		{}
+
+set TRANSPARENT_GIF_COLOR grey
+global nick ircname ircserver notifyinterval notify TRANSPARENT_GIF_COLOR
+global ircport

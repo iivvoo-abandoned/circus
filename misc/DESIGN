@@ -1,0 +1,60 @@
+Ontwerp van en Relaties tussen classes in cIRCus 0.50
+=====================================================
+
+Relaties tussen de objecten.
+
+			KitObject
+			  |
+			handler				io
+public virtual ->_______/    \___________      _________/
+		/                        \    /     
+	servergui			ircserver
+                \__________  ___________/ 
+                           \/   
+			connection
+			    |
+			 targets
+			 __/\__
+	     ___________/      \_________    <- public virtual
+	    /                            \
+	cmdhandler			ctcphandler
+           |                              |
+	guihandler			serverhandler
+           |                              |
+            \____________  ______________/
+	                 \/
+			ircsession
+
+
+		masterwindow()
+    		     |
+		 ircclient 
+		     - ircsession ...
+		     - serverlist
+
+
+		targets
+		  target_list
+		    ttarget ...
+
+Targets (channel-, message- and querywindows) are designed as follows:
+
+	       toplevel    
+	          |
+  ttarget      channelwin  ttarget      toplevel  ttarget        toplevel
+     |            |              |      |               |        |
+     channel_target              querywin               messagewin
+
+
+Events (die gebonden zijn aan 'this') komen, doordat operator()() virtual is,
+binnen bij class ircsession. Gaandeweg wordt het event doorgegeven naar
+boven, tot het een keer afgehandeld wordt (of weggegooid wordt door default
+handler::operator()()
+
+Het gebruik van 'public virtual' voorkomt ambiguiteit in de afleiding. Zie
+Lipmann p. 471.
+
+EVENT HANDLING
+==============
+
+Events worden uitgewisseld door generator en handler via de toolkit. 

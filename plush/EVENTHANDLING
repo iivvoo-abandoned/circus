@@ -1,0 +1,78 @@
+Nieuwe Eventhandling onder Plush
+================================
+
+Probleem:
+
+	Objecten (instantie van plush of zelf gedefinieerde classes) genereren
+	events. Deze events kunnen/moeten afgevangen worden door methods binnen
+	(andere) classes.
+
+	De aard van C++ is zodanig dat je niet 'zomaar' een functiepointer
+	mee kan geven, de context (de instantie van het object zelf) is ook
+	vereist. Maar objecten zijn verschillend! En kunnen dus niet zomaar
+	(bv als void *) doorgegeven worden!
+
+	Bijvoorbeeld, class A genereert het ValueChanged(int) signaal, en
+	object B is in staat dit signaal af te handelen via setValue(int)
+	(let op, ValueChanged is een signaal, setValue is een method)
+
+	class	A
+	{
+		// ...
+		doit()
+		{
+			// ..
+			tk->signal(ValueChanged(10));
+		}
+	}
+
+	class	B
+	{
+		// ..
+		void	setValue(int a)
+		{
+			cout << "New value: " << a << endl;
+		}
+	}
+
+	Deze worden dan bv. verbonden via:
+
+		tk->connect(&a, ValueChanged, &b, setValue);
+
+	Maar C++ zal een dergelijke constructie nooit toelaten.
+
+	Wat is wel mogelijk????
+
+	class A moet sowieso definieren welke signals gegenereerd worden,
+	en welke parameters deze meekrijgen. 
+
+	class	A
+	{
+		A();
+		void	doit()
+		{
+			ValueChanged(10);
+		}
+		
+		// signals
+
+		signal<int>	ValueChanged;
+	};
+
+	Dit installeert een slot-stub in het signal-object ValueChanged
+	
+	// bwah, slechts 1 param beschikbaar. Kan ik ook NOG een template
+	// maken? ofzo?
+	//
+	// ondersteunt g++ al iets als template<class A, class B=dummy> etc?
+
+	template<class A>
+	class	signal
+	{
+		operator()(const A &param)
+		{
+			
+		}
+	}
+	
+	

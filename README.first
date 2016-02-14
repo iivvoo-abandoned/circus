@@ -1,0 +1,35 @@
+This is a not-so-official source release of the cIRCus irc client. You can ask
+me anything about the source, but I assume that if you mess with this stuff,
+you have a basic knowledge of C++ and Unix. My email address is ivo@cs.vu.nl
+
+The cIRCus source is released under the GNU Public License. See COPYING for more
+information. The plush library is released under the GNU Library GPL. See 
+COPYING.LIB-2.0 for more information
+
+There's not much documentation for cIRCus. API's nor source is documented.
+Use the source, luke! 
+
+Some hints:
+
+You need tcl/tk 8.0 and Tix 4.something. You can find Tix source at 
+http://www.xpi.com/tix/ and Tcl/Tk source at 
+http://www.scriptics.com/download/8.0.html
+
+You can, of course, also search for binary distributions
+
+If you want to compile the beast, make sure there's a decent .cfg file in 
+the cfg/ directory. On most linux systems, linux.cfg should work, I think
+Play with it, mail me the results. 
+
+Also, egcs (http://www.cygnus.com/egcs) is a better compiler to use for cIRCus
+than standard g++, though standard g++ should work.
+
+Once your settled, type 'make default' in the main circus dir (where the cfg, 
+circus and plush directories are located). 
+
+If you succeed in compiling (very unlikely), copy the dot.circusrc to your
+homedirectory, edit it (configure one or two servers and the end (this new 
+release has multi server support)), and run it!.
+
+
+Ivo van der Wijk, June 10 1998

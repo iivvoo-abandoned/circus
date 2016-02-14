@@ -1,0 +1,29 @@
+Reported bugs:
+
+18-11-96
+--------
+
+        - Soms is het zo, dat wanneer ik bijv. de join, of de
+          ban dialog oproep, en ik kies een kanaal, door middel
+          van op de pijl naar beneden te klikken, dat ik soms
+          de cursor kwijtraak, en dus geen key of address in kan
+          vullen.
+        - cIRCus crashed, wanneer je een lange naam gebruik als
+          kanaal. zoals:
+          #12345_12345_12345_12345_12345_12345_12345_12345_12345
+          Wanneer je zo'n kanaal joined, dan crashed cIRCus dus.
+
+	 * Ik kap de strings nu af maar alles moet kennelijk afgekapt worden..
+	   *zucht*. Val dood irc
+
+        - Bij het commando "/names" crashed cIRCus.
+	  fixed
+
+15-12-96
+>Wanneer je een kanaal joined met hoofdletters en kleine letters,
+>en daarna wil je iemand invite'n, en je gebruik alleen maar kleine
+>letters, dan geeft cIRCus een error (maar invite toch).
+>voorbeeld:
+>       /join #cIRCus
+>       /invite VladDrac #circus
+

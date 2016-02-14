@@ -1,0 +1,44 @@
+handlers in cIRCus..
+
+Maak voor iedere numeric enzo een handler, of roep hem aan, i.e. voor 
+een 331 (oid) wordt handle_331 aangeroepen, voor KICK handle_KICK, etc
+(case sensitive?)
+
+Maar handlers moeten als 't ff kan ook gekoppeld worden..
+
+bindcommando zou ook mooi zijn..
+en patternmatching
+
+*zucht*
+
+bind <server-topic-"#ductch *sex*"> resettopic
+
+Het moet niet te ircII-ish worden
+maar wel krachtig
+
+eventuele binding/handler moet waarde terugkeren (of moet dit in definitie?)
+die aangeeft of handler quiet is oid (maw, of er nog geechoed moet worden).
+
+cIRCus moet hier dan correct op reageren, i.e. verder niet weergeven indien
+gewenst
+
+returnwaarde is beter, dan kan handler zelf bepalen etc.
+
+circusbind TOPIC #zuurtje "*sex*" oid
+
+from aanwezig
+etc.
+target..
+handlers in cIRCus..
+
+Maak voor iedere numeric enzo een handler, of roep hem aan, i.e. voor 
+een 331 (oid) wordt handle_331 aangeroepen, voor KICK handle_KICK, etc
+(case sensitive?)
+
+Maar handlers moeten als 't ff kan ook gekoppeld worden..
+
+bindcommando zou ook mooi zijn..
+en patternmatching
+
+*zucht*
+

@@ -1,0 +1,45 @@
+Plush - Portable Lightweight Utility Shell
+==========================================
+
+What is Plush?
+==============
+
+Plush is a windowingtoolkit based upon tcl/tk and Tix. It offers
+C++ programmers a nice powerfull api for these packages, including 
+widgets, events, scripting, and more, such as garbage collection.
+
+Plush's API is based upon Hush's API - Plush was written because something
+compatible with Hush was needed, but faster, more stable and easier to
+extend.
+
+Why combine C++ with scripting?
+===============================
+
+Why not? tk/tix are very powerfull toolkits, so why reimplement all those
+widgets? Embedding tcl scripting in your C++ applications also allows for
+more configurability and extendibility of your applications (i.e. config
+files with tcl syntax, or extensions using tk). This way, you take the
+best of two worlds, the power of C++ and all it's available libraries,
+and the power of tcl/tk/tix!
+
+And for speed.. it's definately not slower than tcl/tk. If you're afraid
+of the overhead, use assembly to do X calls >:)
+
+Structure
+=========
+
+To be documented later
+
+Garbage Collection
+==================
+
+Plush's garbage collections is easy and compatible with hush's. New
+widgets are usually created withing others (i.e. toplevels, frames, 
+rootwindow). When a widget is created, it's 'registered' for collection
+at it's parent. When the parent is destroyed, all registered childwidgets
+are also destroyed. I.e. when a toplevel is destroyed, all components
+withing the toplevel are also destroyed.
+
+Though this is not pure garbage collections as java or lisp programmers
+are used to, it does help the programmer somewhat.
+

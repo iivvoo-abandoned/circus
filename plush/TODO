@@ -1,0 +1,53 @@
+TODO:
+----
+
+LOTSLOTSLOTSLOTSLOTS! I've just started.
+
+kit: 
+     root()
+     bind
+     operator <<
+
+widgets:
+
+*    button 
+     canvas 
+*    checkbutton 
+*    entry 
+*    frame 
+     items 
+*    label 
+*    listbox 
+     menu 
+     menubar 
+     menubutton 
+*    message 
+*    radiobutton 
+     scale 
+*    scrollbar 
+*    text 
+*    toplevel 
+
+handlers
+aws
+
+check EvalObj - stuff
+
+Most of the unimplemented widgets above are either difficult (and I don't
+need them right now), or I'm not satisfied with the hush implementation.
+
+insertion in text (and entries?) is rather vague - how to define the indices
+in C++?
+
+Implement proper string escaping at library level, not at applicationlevel,
+like has to be done now with hush
+
+Add extra arguments to bindings, like hush does, by passing extra script-
+commands. I.e. listbox bind {someproc someparam [listbox get selected]}
+etc.
+
+hush checks widgetpathnames and adds a '.' in front if it doesn't start with
+a '.'. I seem to have forgotten some '.' in my cIRCus code, giving weird
+results... But do I really need this?
+
+define operator<< char for kit

@@ -1,0 +1,37 @@
+
+Internally, we use cstring for stringmanipulation. But use standard
+char * for stringcommunication with the outside world (people should
+be free to choose their own stringclass, after all)
+
+The inheritancetree should be quite like Hush's (well, I assume).
+Avoid multiple inheritance, as C++ handles multiply defined methods
+with errors and difficulty
+
+KitObject - Handler - Widget - Button
+	       |	     - Listbox
+	       |	       (etc)
+	       +----- Session - Application
+
+Should kit.[ch] and KitObject.h be merged? They are rather dependend..
+
+Generally, widgets can only be packed in frames or toplevels. Perhaps
+make a separate class of these? 
+
+class packable: public widget
+{
+..
+}
+
+However, this would require the widget constructor to take a 
+widget(packable *, ..) as parent. Looks sloppy...
+
+Actually, I just found out that tk ALLOWS widgets to be embedded in other
+widgets! Try, for example,
+
+	button .b
+	entry .b.e
+	pack .b
+	pack .b.e
+
+It gives weird results though :)
+

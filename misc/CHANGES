@@ -1,0 +1,158 @@
+Changes since 0.30 (14-11-96)
+-----------------------------
+- Fixed 'Error in tcl-script' notices (added escape())
+- Fixed /invite bug (comparing a cstring to NULL gives assertion error)
+- Fixed 'No parameters on commandline' bug (it was just a too strict
+  assertion in cstring)
+- cIRCus suddenly stopped working with certain servers. It seems some servers
+  end a message with \n, others with \r\n. This has been fixed.
+- Efnet servers don't support channels longer than 50 characters. This means
+  cIRCus used to crash on long channelnames. Now, circus trucates them after
+  the 50th character (this might cause problem on undernet..
+- Fixed /names bug.
+- Added support for IRCLOGIN environment variable and .circusrc 'login'
+  variable to set loginname.
+- Servernotices now appear in the master window
+- Removed usermode +s (which isn't supported in server >= 2.9.1, 
+  added usermode +r
+- cIRCus now handles serverops better
+- Improved (?) servercode. It now accepts messages separated by \r\n and \n
+- Reconnecting to a new server should work!
+- The helpbutton launches the new help application
+  (clicking it too fast might start more than one though :(
+  - this help application (cIRCle) is not (yet?) available under Linux
+- If away, the awaymessage is shown in the title of the masterwindow
+- Added histentry - an entry with history facilities, and used it for the
+  inputentry
+- Pasting in the inputentry should work. Sort off. It's a kludge
+
+Changes since 0.31 (25-11-96)
+-----------------------------
+- Internal rewrites, cIRCus should be a tiny little bit faster
+- Rejoin (1x) after kick
+- Removed stupid, annoying behaviour in entry widget which makes typed text
+  disappear if you remove your mousepointer.
+- Added serverlist which stores servers+portnumbers
+- Fixed not-online bug. If a user is not online, it is reported in the
+  query window (if any)
+- Added keybindings to allow insertion of ^B ^V ^_ and ^O
+- Added inputentries to channel and query windows. People want them,
+  they get them. *sigh*
+- Lots of ctcp improvements
+- Serverlist is now complete - you can define a complete list of servers
+  and portnumbers in your .circusrc., or set the IRCSERVER environment
+  variable
+- Added some extra numerics (442, 250)
+- Rewrote entry-pasting stuff. The old solution did not work. The current one
+  isn't very elegant (newlines are inserted as '\n'), but it works.
+
+Changes since 0.32 (01-12-96)
+-----------------------------
+- Started working on DCC code. DCC chat works fine, thought it's hard to
+  control (i.e. no way to close connection currently).
+- Fixed bug in combobox in reconnect dialog window. Portnumber was messed
+  up.
+- Fixed bug in join-code. If a user joins a channel, and is opped by the 
+  server, the server reports this as channel^Go. cIRCus forgot to remove the
+  ^Go when displaying the join message
+- /server newhost did not update the serverentry in the masterwindow. Now
+  it does.
+- cIRCus didn't convert commands to lower case -> LEAVE does not work :\
+  - fixed
+- Added LOAD command to load tcl scripts (the beginning of cIRCus scripting :)
+- Added OPER command
+- Added extra numerics for 'american efnet'
+- cIRCus should understand channeltime stamps (both undernet and efnet)
+- Support for the ^C colorattribute in messages, which was recenly introduced
+  in the latest mIRC (4.7). Using ^Cx,y you can set the
+  fore-/backgroundcolor.
+- Added replies for TRACE command
+- /msg someone that wasn't online made circus crash. - fixed (thnx pino666)
+- fixed wrong error when /inviting someone with a channel
+  (i.e. /invite vladdrac #cIRCus) - Thanx pino :)
+- Added 2 very simple scripting commands. Have a look at 'finger.tcl'
+  to get an impression. Type the following commands:
+
+  /query somenick
+  click chatbutton and wait for establish
+  /load finger
+  /finger =somenick
+  /circus =somenick
+  /okay =somenick
+
+  You can also query yourself to see the result! :)
+
+Changes since 0.40 (13-01-97)
+-----------------------------
+- The usage of the USER command now complies to RFC1459 - hopefully servers
+  won't see cIRCus as a bot anymore :)
+- DCC fixes
+- cIRCus now follows nickchanges (which involved a tiny internal redesign)
+- Input focus/entry show-hide is handled differently
+  (I actually planned something with timeouts but I don't think it would be
+  very efficient)
+- Added umode command
+- Added some missing numerics (408, INFO replies)
+- The ircnet channelsize limit shouldn't be a problem anymore (neither should
+  a tcl 'raw "JOIN #channel" be, anymore)
+- Dumped that stupid (*&(* libsocket and used my own network io-class.
+  Works fine, have to fix errorreporting though
+- Changed the displaying of nicknames in query/messagewindows. In querywindows,
+  messages sent get the senders nickname (yours that is), in messagewindows,
+  messages sent get the targets nickname.
+- Fixed the 'channels-with-a-.-bug'. Windowpathnames are now independent
+  of the channelnames
+- You can now select 1 or more users in your messagewindow and reply to them.
+  This means you don't have to start a query to send a simple respons, or
+  type /msg. 
+
+Changes since 0.41 (06-02-97)
+-----------------------------
+- a ` is legal in nicknames, so is | (rfc1459 really sucks)
+- New channelwindows should have focus bij default.
+- If you join a channel, then this is noted in the window
+- Added options to automatically raise/deiconify window on output
+- AWAY info is reset after server reconnect
+- serverreconnect works!
+- nick can be changed when not connected
+- Added some more info to the window title
+- Fixed bug - cIRCus crashed if you join a locked channel
+- DCC fixed - the wrong ip (127.0.0.1) was sent on connections over
+  dynamic ip
+- cIRCus accepts two commandline options:
+  -d sets the debuglevel, i.e. -d 5
+  -f resourcefile points to the resourcescript to be loaded, i.e. -f system.rc
+  furthermore, cIRCus searches standard directories for global circusrc scripts:
+                  char    *locs[] = {
+                  "/usr/local/circus/system.circusrc",
+                  "/usr/circus/system.circusrc",
+                  "/usr/local/lib/circus/system.circusrc",
+                  "/usr/lib/circus/system.circusrc",
+                   NULL
+                  };
+- Created a fileselector, which is now used for the /load command, and 
+  will be used for dcc uploads/downloads.
+- Added extra .circurc variable 'scriptdir' and 'dccdownloaddir'
+- The textwidget should beep once per line if it contains beeps
+- Removed the scrollock button again - the widget automatically locks
+  if the scrollbar has the mousecursor! :)
+- renamed -d and -f to -debug and -file, -d clashes with -display
+- Lots of DCC fixes. Abort works, up/downloads work, filerrors are reported
+  (upto a certain level - disk full etc is not detected). Mostly quick hacks
+  because I want to ship 0.42.
+
+Changes since 0.42 (09-05-97)
+-----------------------------
+- The static version now only has tcl/tk static, because of problems with
+  my libc and hostnameresolving
+- Commented out too much code, causing cIRCus not to send unknown commands to
+  the server
+- Added keybindings Control-N and Control-P to histentry to go back/forward
+  in history
+- Added binding Control-U to script scripts/key.tcl
+- Added script variable 'signoff' to set the default signoff message
+- Added Jan Harkes' patches for Irix
+
+Changes since 0.43 (01-06-97)
+-----------------------------
+

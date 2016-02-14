@@ -1,0 +1,98 @@
+TODO voor versie 0.42
+---------------------
+- instellen fingerreplies
+- permissies bestanden
+- locatie files (zorg dat current directory ook default word)
+- dcc iets beter (met name over slip)
+
+18-1-97 nu ff belangrijk:
+-------------------------
+
+DCC fixes (o.a. buttons, abort, foutmeldingen)
+meer scriptcommando's
+leuke scripts
+nickchange in query:
+ - dcc?
+ - toon nickchange in bold
+dalnet extensies? (i.e. http) + topic-set-fix
+adjust historyentry behaviour
+check '.' in van alles
+gebruik recv/send in alles in querywin.c
+/me in messagewin - this requires CommandEvent to accept a non-default
+current/target/whatever
+focus op entry zetten in alle windows
+/nick semantics veranderen, i.e. als disconnected
+
+/msg msg vladdrac,vladdraq werkt wel maar wordt niet goed weergegeven
+gebruik dit tevens voor het sturen van msg's naar meerdere mensen vanuit
+het messagewindow
+V|adDrac is invalid nick
+
+werkt /msg =vladdrac wel?
+inconsisten behaviour of revcaction etc?
+
+ServerEvent   "irc.nijenrode.nl" "235" "cIRCuser" "*" "0" "End of service listing"
+****  ServerEvent: Could not handle "235"
+arg: 0: ServerEvent
+arg: 1: irc.nijenrode.nl
+arg: 2: 235
+arg: 3: cIRCuser
+arg: 4: *
+arg: 5: 0
+arg: 6: End of service listing
+
+--
+
+08/10/96
+- zie ook TODO.old
++- TALLOZE PROBLEMEN met []\' etc in query/nick/channel etc.
+   -- gaat nog fout bij menu's (door implementatie hush)
+-- channel1,channel2 in combobox-> confusion!
+-- Quitdialog zodanig positioneren dat na drukken op OK de muis in een aws-
+   button komt -> crash
+
+-- Alleen nog problemen met title en channelinvitemenu?
+-- Images transparant!!
+
+- Bij dialogboxes: delete (WM) selecteert cancel
+- Selectie bij users die met muis meebeweegt
+- DCC abort button werkend
+- DCC detectie van sluiten connectie
+- Inputentry idle timout etc.
+- sorteeropties voor userlist
+- vervangen libsocket door io-lib
+
+- Switchen van target in master met keybindings
+
+- disabled aws buttons accepteren nog button 3
+
+
+- cut & paste
+- meerdere selecties in targetlist -> mag dat? Als je message stuurt?
+
+- refocus na aanmaken nieuw window - mogelijk??
+- BEEP in irctext
+- Kijken of left margin kan in irctext??
+- soms staan niet alle users in nameslist bij join, maar wel in who list??
+- Duidelijker aangeven dat een channel nog niet gejoined is??
+
+--- SERVER RELATED ---
+
+-- bij veranderen server: check of nieuwe host/port
+
+- bij disconnect/kick (?) meer info in statusregel
+- Titles in queries met {-nicks gaat fout
+
+- lange termijn:
+
+  clear button voor entries in dialogs??
+
+
+DCC:
+:Bazz!bas@asd10-23.dial.xs4all.nl PRIVMSG lala :DCC SEND /home/bas/nosepuke.jpg 2130706433 1130 33210
+
+[ivo@bordeaux]:40# host 2130706433
+Name: localhost
+Address: 127.0.0.1
+
+Is een config probleem. Doet ircII het goed? Hoe?

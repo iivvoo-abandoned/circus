@@ -1,0 +1,78 @@
+kit.o: kit.c kit.h cstring.h escape.h binding.h kitcmp.h toplevel.h \
+ frame.h widget.h handler.h KitObject.h garbage.h event.h
+KitObject.o: KitObject.c KitObject.h kit.h cstring.h escape.h \
+ binding.h kitcmp.h garbage.h widget.h handler.h event.h
+event.o: event.c event.h KitObject.h kit.h cstring.h escape.h \
+ binding.h kitcmp.h garbage.h
+binding.o: binding.c binding.h cstring.h
+session.o: session.c session.h handler.h KitObject.h kit.h cstring.h \
+ escape.h binding.h kitcmp.h garbage.h event.h widgets.h widget.h \
+ button.h checkbutton.h entry.h frame.h label.h listbox.h menu.h \
+ menubutton.h message.h radiobutton.h scrollbar.h text.h toplevel.h \
+ tixBalloon.h tixLabelFrame.h tixNoteBook.h tixNBFrame.h \
+ tixPanedWindow.h plushButton.h plushHistEntry.h
+handler.o: handler.c handler.h KitObject.h kit.h cstring.h escape.h \
+ binding.h kitcmp.h garbage.h event.h
+widget.o: widget.c widget.h cstring.h handler.h KitObject.h kit.h \
+ escape.h binding.h kitcmp.h garbage.h event.h
+button.o: button.c button.h widget.h cstring.h handler.h KitObject.h \
+ kit.h escape.h binding.h kitcmp.h garbage.h event.h
+checkbutton.o: checkbutton.c checkbutton.h button.h widget.h cstring.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h
+entry.o: entry.c entry.h cstring.h widget.h handler.h KitObject.h \
+ kit.h escape.h binding.h kitcmp.h garbage.h event.h
+frame.o: frame.c frame.h cstring.h widget.h handler.h KitObject.h \
+ kit.h escape.h binding.h kitcmp.h garbage.h event.h
+label.o: label.c label.h cstring.h widget.h handler.h KitObject.h \
+ kit.h escape.h binding.h kitcmp.h garbage.h event.h
+listbox.o: listbox.c listbox.h cstring.h widget.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h
+menu.o: menu.c menu.h widget.h cstring.h handler.h KitObject.h kit.h \
+ escape.h binding.h kitcmp.h garbage.h event.h
+menubutton.o: menubutton.c menubutton.h widget.h cstring.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h \
+ menu.h
+message.o: message.c message.h cstring.h widget.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h
+text.o: text.c text.h cstring.h widget.h handler.h KitObject.h kit.h \
+ escape.h binding.h kitcmp.h garbage.h event.h
+radiobutton.o: radiobutton.c radiobutton.h button.h widget.h cstring.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h
+scrollbar.o: scrollbar.c scrollbar.h cstring.h widget.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h
+toplevel.o: toplevel.c toplevel.h cstring.h frame.h widget.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h
+tixBalloon.o: tixBalloon.c tixBalloon.h frame.h cstring.h widget.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h
+tixLabelFrame.o: tixLabelFrame.c tixLabelFrame.h cstring.h frame.h \
+ widget.h handler.h KitObject.h kit.h escape.h binding.h kitcmp.h \
+ garbage.h event.h
+tixNoteBook.o: tixNoteBook.c tixNoteBook.h cstring.h widget.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h tixNBFrame.h
+tixNBFrame.o: tixNBFrame.c tixNBFrame.h cstring.h widget.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h
+tixPanedWindow.o: tixPanedWindow.c tixPanedWindow.h cstring.h widget.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h frame.h
+plushButton.o: plushButton.c plushButton.h button.h widget.h cstring.h \
+ handler.h KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h \
+ event.h
+plushHistEntry.o: plushHistEntry.c plushHistEntry.h entry.h cstring.h \
+ widget.h handler.h KitObject.h kit.h escape.h binding.h kitcmp.h \
+ garbage.h event.h
+filechooser.o: filechooser.c filechooser.h widgets.h widget.h \
+ cstring.h handler.h KitObject.h kit.h escape.h binding.h kitcmp.h \
+ garbage.h event.h button.h checkbutton.h entry.h frame.h label.h \
+ listbox.h menu.h menubutton.h message.h radiobutton.h scrollbar.h \
+ text.h toplevel.h tixBalloon.h tixLabelFrame.h tixNoteBook.h \
+ tixNBFrame.h tixPanedWindow.h plushButton.h plushHistEntry.h
+dialog.o: dialog.c dialog.h widgets.h widget.h cstring.h handler.h \
+ KitObject.h kit.h escape.h binding.h kitcmp.h garbage.h event.h \
+ button.h checkbutton.h entry.h frame.h label.h listbox.h menu.h \
+ menubutton.h message.h radiobutton.h scrollbar.h text.h toplevel.h \
+ tixBalloon.h tixLabelFrame.h tixNoteBook.h tixNBFrame.h \
+ tixPanedWindow.h plushButton.h plushHistEntry.h

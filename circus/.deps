@@ -1,0 +1,66 @@
+main.o: main.c ircclient.h serverlist.h const.h ircsession.h \
+ guihandler.h cmdhandler.h cstring.h targets.h connection.h \
+ servergui.h irctext.h ircserver.h io.h channel_target.h channelwin.h \
+ querywin.h targetif.h user.h misc.h target_list.h serverhandler.h \
+ ctcphandler.h masterwindow.h images.h
+ircclient.o: ircclient.c ircclient.h serverlist.h const.h ircsession.h \
+ guihandler.h cmdhandler.h cstring.h targets.h connection.h \
+ servergui.h irctext.h ircserver.h io.h channel_target.h channelwin.h \
+ querywin.h targetif.h user.h misc.h target_list.h serverhandler.h \
+ ctcphandler.h masterwindow.h internalevent.h
+servergui.o: servergui.c cstring.h irctext.h servergui.h misc.h \
+ images.h const.h
+ircserver.o: ircserver.c ircserver.h io.h cstring.h misc.h
+connection.o: connection.c connection.h servergui.h cstring.h \
+ irctext.h ircserver.h io.h dcc.h if_dcc.h misc.h images.h const.h
+target_list.o: target_list.c target_list.h targetif.h cstring.h misc.h
+targets.o: targets.c targets.h connection.h servergui.h cstring.h \
+ irctext.h ircserver.h io.h channel_target.h channelwin.h querywin.h \
+ targetif.h user.h misc.h target_list.h const.h
+cmdhandler.o: cmdhandler.c cmdhandler.h cstring.h targets.h \
+ connection.h servergui.h irctext.h ircserver.h io.h channel_target.h \
+ channelwin.h querywin.h targetif.h user.h misc.h target_list.h \
+ const.h ../plush/dialog.h ../plush/filechooser.h internalevent.h
+guihandler.o: guihandler.c guihandler.h cmdhandler.h cstring.h \
+ targets.h connection.h servergui.h irctext.h ircserver.h io.h \
+ channel_target.h channelwin.h querywin.h targetif.h user.h misc.h \
+ target_list.h internalevent.h const.h
+ctcphandler.o: ctcphandler.c ctcphandler.h cstring.h misc.h targets.h \
+ connection.h servergui.h irctext.h ircserver.h io.h channel_target.h \
+ channelwin.h querywin.h targetif.h user.h target_list.h const.h \
+ if_dcc.h
+serverhandler.o: serverhandler.c serverhandler.h cstring.h \
+ ctcphandler.h misc.h targets.h connection.h servergui.h irctext.h \
+ ircserver.h io.h channel_target.h channelwin.h querywin.h targetif.h \
+ user.h target_list.h const.h
+ircsession.o: ircsession.c ircsession.h guihandler.h cmdhandler.h \
+ cstring.h targets.h connection.h servergui.h irctext.h ircserver.h \
+ io.h channel_target.h channelwin.h querywin.h targetif.h user.h \
+ misc.h target_list.h serverhandler.h ctcphandler.h
+masterwindow.o: masterwindow.c cstring.h irctext.h masterwindow.h \
+ connection.h servergui.h ircserver.h io.h misc.h images.h const.h
+channel_target.o: channel_target.c channel_target.h cstring.h \
+ channelwin.h irctext.h querywin.h targetif.h user.h misc.h
+irctext.o: irctext.c cstring.h irctext.h misc.h
+channelwin.o: channelwin.c cstring.h user.h irctext.h internalevent.h \
+ channel_target.h channelwin.h querywin.h targetif.h misc.h images.h
+querywin.o: querywin.c cstring.h irctext.h querywin.h targetif.h \
+ images.h misc.h internalevent.h
+misc.o: misc.c cstring.h misc.h fnmatch.h
+images.o: images.c images.h cstring.h misc.h
+cstring.o: cstring.c cstring.h
+dcc.o: dcc.c dcc.h if_dcc.h cstring.h misc.h io.h
+if_dcc.o: if_dcc.c ../plush/dialog.h ../plush/widgets.h \
+ ../plush/widget.h ../plush/cstring.h ../plush/handler.h \
+ ../plush/KitObject.h ../plush/kit.h ../plush/escape.h \
+ ../plush/binding.h ../plush/kitcmp.h ../plush/garbage.h \
+ ../plush/event.h ../plush/button.h ../plush/checkbutton.h \
+ ../plush/entry.h ../plush/frame.h ../plush/label.h ../plush/listbox.h \
+ ../plush/menu.h ../plush/menubutton.h ../plush/message.h \
+ ../plush/radiobutton.h ../plush/scrollbar.h ../plush/text.h \
+ ../plush/toplevel.h ../plush/tixBalloon.h ../plush/tixLabelFrame.h \
+ ../plush/tixNoteBook.h ../plush/tixNBFrame.h \
+ ../plush/tixPanedWindow.h ../plush/plushButton.h \
+ ../plush/plushHistEntry.h io.h cstring.h misc.h if_dcc.h
+io.o: io.c io.h
+fnmatch.o: fnmatch.c fnmatch.h

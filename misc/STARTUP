@@ -1,0 +1,15 @@
+Mogelijke fixes voor probleem met cIRCus:
+
+- Doorzoek een lijstje met paden en kijk of er een bestaat, bv:
+	/usr/local/circus
+	/usr/local/lib/circus
+	/usr/lib/circus
+	/usr/circus
+	./
+
+- Als zo'n pad bestaat, ga er dan vanuit dat het een cIRCus rootdirectory
+  is, gebruik de system.circusrc in die directory (if exists), en gebruik
+  het als 'root dir'
+
+- eventueel kan alles override worden met -root optie
+

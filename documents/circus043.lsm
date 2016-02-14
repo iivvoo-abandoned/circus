@@ -1,0 +1,20 @@
+Begin3
+Title:          cIRCus
+Version:        0.43
+Entered-date:   15MAY97
+Description:    cIRCus is a graphical client for Linux/X11. It supports 
+		Multiple windows, DCC, mIRC colorsupport, and some builtin
+		tcl/tk scripting. More info is available at
+		http://www.nijenrode.nl/~ivo/circus, the cIRCus homepage
+Keywords:       IRC, chat, X11, irc client
+Author:         irvdwijk@cs.vu.nl (Ivo van der Wijk), mpdboer@cs.vu.nl (Mark de Boer)
+Maintained-by:  irvdwijk@cs.vu.nl (Ivo van der Wijk)
+Primary-site:   ftp.nijenrode.nl /pub/people/ivo/circus043.tar.gz
+		571299 circus043.tar.gz
+Alternate-site: ftp.underent.org /pub/irc/clients/xwindows/circus/circus043.tar.gz
+		571299 circus043.tar.gz
+Original-site:  ftp.nijenrode.nl /pub/people/ivo/circus043.tar.gz
+Platforms:      Linux, Solaris, Irix, Xwindows required
+Copying-policy: Shareware, no fee required at this moment. 
+ 		Binary only, see included COPYING document
+End

@@ -1,0 +1,82 @@
+/alias test1 {
+/msg $0 000 white
+/msg $0 011 black
+/msg $0 022 blue (dark)
+/msg $0 033 green (dark)
+/msg $0 044 red
+/msg $0 055 brown
+/msg $0 066 purple (dark)
+/msg $0 077 orange
+/msg $0 088 yellow
+/msg $0 099 lightgreen
+/msg $0 1010 cyan (a kinda green/blue)
+/msg $0 1111 lightcyan
+/msg $0 1212 lightblue
+/msg $0 1313 pink (light purple)
+/msg $0 1414 grey
+/msg $0 1515 lightgrey
+}
+
+alias test2 {
+/msg $0 00,00MMM00,01MMM00,02MMM00,03MMM00,04MMM00,05MMM00,06MMM00,07MMM00,08MMM00,09MMM00,10MMM00,11MMM00,12MMM00,13MMM00,14MMM00,15MMM
+/msg $0 01,00MMM01,01MMM01,02MMM01,03MMM01,04MMM01,05MMM01,06MMM01,07MMM01,08MMM01,09MMM01,10MMM01,11MMM01,12MMM01,13MMM01,14MMM01,15MMM
+/msg $0 02,00MMM02,01MMM02,02MMM02,03MMM02,04MMM02,05MMM02,06MMM02,07MMM02,08MMM02,09MMM02,10MMM02,11MMM02,12MMM02,13MMM02,14MMM02,15MMM
+/msg $0 03,00MMM03,01MMM03,02MMM03,03MMM03,04MMM03,05MMM03,06MMM03,07MMM03,08MMM03,09MMM03,10MMM03,11MMM03,12MMM03,13MMM03,14MMM03,15MMM
+/sleep 5
+/msg $0 04,00MMM04,01MMM04,02MMM04,03MMM04,04MMM04,05MMM04,06MMM04,07MMM04,08MMM04,09MMM04,10MMM04,11MMM04,12MMM04,13MMM04,14MMM04,15MMM
+/msg $0 05,00MMM05,01MMM05,02MMM05,03MMM05,04MMM05,05MMM05,06MMM05,07MMM05,08MMM05,09MMM05,10MMM05,11MMM05,12MMM05,13MMM05,14MMM05,15MMM
+/msg $0 06,00MMM06,01MMM06,02MMM06,03MMM06,04MMM06,05MMM06,06MMM06,07MMM06,08MMM06,09MMM06,10MMM06,11MMM06,12MMM06,13MMM06,14MMM06,15MMM
+/msg $0 07,00MMM07,01MMM07,02MMM07,03MMM07,04MMM07,05MMM07,06MMM07,07MMM07,08MMM07,09MMM07,10MMM07,11MMM07,12MMM07,13MMM07,14MMM07,15MMM
+/sleep 5
+/msg $0 08,00MMM08,01MMM08,02MMM08,03MMM08,04MMM08,05MMM08,06MMM08,07MMM08,08MMM08,09MMM08,10MMM08,11MMM08,12MMM08,13MMM08,14MMM08,15MMM
+/msg $0 09,00MMM09,01MMM09,02MMM09,03MMM09,04MMM09,05MMM09,06MMM09,07MMM09,08MMM09,09MMM09,10MMM09,11MMM09,12MMM09,13MMM09,14MMM09,15MMM
+/msg $0 10,00MMM10,01MMM10,02MMM10,03MMM10,04MMM10,05MMM10,06MMM10,07MMM10,08MMM10,09MMM10,10MMM10,11MMM10,12MMM10,13MMM10,14MMM10,15MMM
+/msg $0 11,00MMM11,01MMM11,02MMM11,03MMM11,04MMM11,05MMM11,06MMM11,07MMM11,08MMM11,09MMM11,10MMM11,11MMM11,12MMM11,13MMM11,14MMM11,15MMM
+/sleep 5
+/msg $0 12,00MMM12,01MMM12,02MMM12,03MMM12,04MMM12,05MMM12,06MMM12,07MMM12,08MMM12,09MMM12,10MMM12,11MMM12,12MMM12,13MMM12,14MMM12,15MMM
+/msg $0 13,00MMM13,01MMM13,02MMM13,03MMM13,04MMM13,05MMM13,06MMM13,07MMM13,08MMM13,09MMM13,10MMM13,11MMM13,12MMM13,13MMM13,14MMM13,15MMM
+/msg $0 14,00MMM14,01MMM14,02MMM14,03MMM14,04MMM14,05MMM14,06MMM14,07MMM14,08MMM14,09MMM14,10MMM14,11MMM14,12MMM14,13MMM14,14MMM14,15MMM
+/msg $0 15,00MMM15,01MMM15,02MMM15,03MMM15,04MMM15,05MMM15,06MMM15,07MMM15,08MMM15,09MMM15,10MMM15,11MMM15,12MMM15,13MMM15,14MMM15,15MMM
+}
+
+alias test3 {
+/msg $0             08|
+/msg $0            08-*- 
+/msg $0             09,03^
+/msg $0            09,03/08*09\\
+/msg $0           09,03/00.09 _\\
+/msg $0            09,03/ \\
+/msg $0           09,03/  08*09\\
+/msg $0          09,03/ 11*09   \\
+/msg $0         09,03/_08.09___04()09\\
+/msg $0             01,05|
+}
+
+alias xmas {
+/msg $0  02,02                         08__/\\__                      
+/msg $0  02,02                         08\\ ** /                      
+/msg $0  02,02                         08/_**_\\                      
+/msg $0  02,02                         09,03/ 08\\/09,03 \\2,2                      
+/msg $0  02,02                       09,03/3,9/ ~  $$ \\9,3\\2,2                    
+/msg $0  02,02                     09,03/___3,9______9,3___\\2,2                  
+/msg $0  02,02                    09,03/3,9/  *  %    \\9,3\\8,2~                  
+/msg $0  0,0                  ~09,03/ 3,9/  @   +  #  \\9,3 \\0,0                
+/msg $0  0,0                 09,03/__3,9/______________\\9,3__\\8,0~             
+/msg $0  0,0                * 09,03/  3,9/   +        \\9,3  \\8,0 *             
+/msg $0  0,0               09,03/%  3,9/$$ 4M E R R Y3 * \\9,3 # \\0,0              
+/msg $0  0,0             ~09,03/____3,9/____o___________\\9,3____\\0,0           
+/msg $0  0,0             * 09,03/  ^3,9/            @  \\9,3    \\8,0 *          
+/msg $0  0,0             09,03/ %  3,9/4C H R I S T M A S\\9,3   # \\0,0          
+/msg $0  0,0          09,03o/~    3,9/o          #   %   \\9,3o    ~\\0,0        
+/msg $0  0,0        09,03/_____3,9/_______________________\\9,3______\\0,0       
+/msg $0  0,0        2*   4o   2*    4o   1,5| 2* 1|0,0  4o   2*    4o   2*       
+/msg $0  0,0                         1,5|   |1,0                       
+/msg $0  0,0                         1,5|___|1,0                       
+/msg $0  
+/msg $0        The 2c3I4R5C6u7s development team whishes you a
+/msg $0                      Merry Christmas
+/msg $0                           and a
+/msg $0                      Happy New Year!
+
+}
+

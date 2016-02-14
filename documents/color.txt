@@ -1,0 +1,64 @@
+For two years, mIRC didn't support bold, underline, reverse,
+or color codes while other irc clients already did. In fact
+other irc clients used their own proprietary color format.
+
+Alas, previous irc client coders didn't cooperate on creating a
+color code standard. Before implementing color codes in mIRC, I
+talked to various people to try to find a standard format and a
+standard color order... not only did everyone I talk to have a
+different opinion but since every IRC client that supported color
+codes already implemented it's own proprietory color code and
+color ordering, my choice for color codes would have ended up
+not being compatible with the majority of clients anyway.
+
+I saw no reason to be compatible with ircii over pirch, or pirch
+over ircle, or ircle over eggdrop, etc. All of these irc clients
+use a different color format. I chose to be as compatible as
+possible with Ircle because it was the first format suggested to
+me and seemed to make sense. ANSI cannot be used... IRC Servers
+don't allow escape characters to be sent as part of text, and if
+you send ANSI characters without the escape code, it will appear
+as rubbish on ANSI terminals. EPIC irc clients can interpret
+this, but all other irc clients can't.
+
+It seems that the reason non-mIRC users are complaining isn't
+because mIRC uses color codes or because color codes are wrong
+(because other clients already use them) but because there are
+a lot of mIRC users, and their own clients don't support the
+mIRC color format.
+
+I've always made an effort to create positive useful features
+in mIRC, and to be as compatible as possible with other clients,
+as well as to be irc server-friendly, and mIRC wouldn't be
+what it is today if I hadn't listened to and acted on criticisms
+and suggestions from many people.
+
+However, the current "debate" is illogical since other irc
+clients used color codes long before mIRC did, and in fact
+they are the reason I implemented color in mIRC in the first
+place. So I certainly have no intention of removing colour
+codes from mIRC based on that argument.
+
+If *all* irc clients stop supporting color codes, I would also
+consider removing this feature from mIRC. If all IRC Clients
+decide on a single color code format and color order, I will
+gladly implement that (perhaps this little "incident" will
+finally result in some cooperation), but until that happens
+I just can't see how it could be fair to ask me to remove color
+codes and prevent mIRC users from using them and yet allow other
+clients and their users to use them.
+
+Also note that I will not implement color codes that are not
+simple and intuitive to use. The mIRC color format was designed
+so that human beings can use it, not so that machines can
+interpret it. Anything which requires memorizing combinations of
+several letters numbers and other characters (eg. ANSI) is just
+pointless.
+
+I will also not implement any specific color code just to be
+compatible with what somebody else thinks is the standard. Since
+releasing mIRC 4.7, I've already had five different color code
+formats suggested to me from people who thought these formats
+were the real standard and they were annoyed that I didn't use
+their format.
+

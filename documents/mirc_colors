@@ -1,0 +1,86 @@
+(Message inbox:15)
+Return-Path: t.r.vonck@student.utwente.nl 
+Return-Path: t.r.vonck@student.utwente.nl
+Received: from driene.student.utwente.nl (driene.student.utwente.nl [130.89.220.2]) by vladdrac.is.lame.org (8.7.4/8.7.3) with SMTP id QAA01323 for <ivo@vladdrac.is.lame.org>; Wed, 11 Dec 1996 16:36:24 +0100
+Received: from cheops (wit399402.student.utwente.nl) by driene.student.utwente.nl with SMTP id AA07455
+  (5.67b/IDA-1.5 for <ivo@vladdrac.is.lame.org>); Wed, 11 Dec 1996 16:31:58 +0100
+Message-Id: <2.2.16.19961211153202.529f1c88@mail.student.utwente.nl>
+X-Sender: s8817502@mail.student.utwente.nl
+X-Mailer: Windows Eudora Pro Version 2.2 (16)
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 11 Dec 1996 16:32:02 +0100
+To: ivo@vladdrac.is.lame.org
+From: Tjerk Vonck <t.r.vonck@student.utwente.nl>
+Subject: mIRC kleur codering
+
+Dag Ivo,
+Meteen maar even in 't engels, dan kan ik dit mailtje eens vaker gebruiken :-)
+Veel succes er mee !,
+Tjerk.
+
+-------------
+The color codes in mIRC are inserted by hitting the ctrl-K key
+combination. The actual control character inserted in the text 
+is a ctrl-C seen as ^C or inverse C on most UNIX clients.
+
+Besides mIRC also IRCLE (Mac) uses the ^C color attribute stuff,
+Virc and Pirch might soon and even some UNIX scripts start to use it! The
+syntax of the color attribute in text has the format  ^CN[,M]  to
+start colored text. A plain ^C can be used to close the effect,
+much like the normal Bold/Inverse/Underline attributes.
+
+N and M can be any number out of a range {0,1,..,15} thus pointing 
+to a range of sixteen colors. N will be the text (foreground) color, 
+M a background color. A background color (M) is not always included.
+If no background color is set the recieving client uses his default 
+background color (white).
+
+  Technically mIRC accepts the full number range 0,1,2,... 99 (and
+  even 00,01,02,03,...99) as valid color numbers. Thus N and M can 
+  maximally be two digits long. Color 16 is the same as color 0,
+  color 17 is the same as color 1, etc. etc. 
+
+You can expect to see combinations like:
+ blabla ^C5,12to be colored text and background^C blabla
+ blabla ^C5to be colored text^C blabla
+ blabla ^C3to be colored text ^C5,2other colored text and also background^C
+blabla
+ blabla ^C3,5to be colored text and background ^C8other colored text but
+SAME background^C blabla
+ blabla ^C3,5to be colored text and background ^C8,7other colored text and
+other background^C blabla
+
+As you see the background color keeps valid till it is changed or till 
+the entire color is switched off with a ^C. Of course lines can start 
+with colored text from the beginning and a closing ^C is not always given.
+To specify a background color ALSO a foreground color has to be given.
+(So a ^C,8 attribute is NOT valid and thus ignored)
+
+Color code list
+ 0 white
+ 1 black
+ 2 blue (dark)
+ 3 green (dark)
+ 4 red
+ 5 brown
+ 6 purple (dark)
+ 7 orange
+ 8 yellow
+ 9 lightgreen
+ 10 cyan (a kinda green/blue)
+ 11 lightcyan
+ 12 lightblue
+ 13 pink (light purple)
+ 14 grey
+ 15 lightgrey
+
+This list matches best to already existing 'standards' on Mac and 
+other Windows' clients.
+
+I hope this information is of use to you?  If you need any more 
+info, please ask me? :-))  I'm always willing to dig up more info 
+for you :-)
+
+Tjerk Vonck.
+t.r.vonck@student.utwente.nl

@@ -1,0 +1,23 @@
+- reject port < 1024
+- browse when reading/saving
+- garbage collection
+- errormessages when opening files 
+- DCC resume
+- Metertjes
+- DCC send flood detectie? Ivm. heel veel windows
+- verschillende types DCC, i.e. TURBO (let niet op ack), FAST (loop voor op
+  ack), NORMAL
+
+
+2 buttons, dcc en chat
+
+dcc start en verbreekt dcc verbindingen
+
+chat schakelt tussen message en dcc
+
+  als er geen connectie is, wordt deze gestart
+
+niet vergeten: buttons aanpassen als chat van anderekant komt
+
+ircquery::setdcc(int)
+ircquery::setchat(int) // also toggles button

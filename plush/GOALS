@@ -1,0 +1,23 @@
+hash/gosh/gish/whatever
+
+I try to implement a hush-like package built upon tcl/tk (8.0)
+Hush has a nice interface, but it's slow, buggy, poorly documented,
+and every new release is a pain to port to linux.
+
+I do not try to re-invent the wheel, my first goal is to be compatible
+enough to compile cIRCus, after that, all kinds of goodies can be 
+added (i.e. tix)
+
+Also, it's not my goal to make a perfect 1-1 match between C++ and tcl/tk,
+I use tcl/tk as underlying toolkit, but I may add functionality that is
+not supported in in tcl/tk (and the other way around, I may not define
+C++ equivalents for each tcl/tk option/procedure, etc).
+
+Some of the goals are:
+
+- Speed
+- Stability
+- Portability
+- Extendibility
+
+Other features that Hush lacks >:)
